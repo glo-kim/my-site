@@ -819,3 +819,65 @@ h1, h2, h3 {
     padding: 1rem 1.25rem;
   }
 }
+
+/* ============================================
+   THEME TOGGLE BUTTON
+   ============================================ */
+.theme-toggle {
+  background: none;
+  border: 1.5px solid var(--sand-deep);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--ink-mid);
+  margin-left: 1.5rem;
+  padding: 0;
+  flex-shrink: 0;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--gold);
+  color: var(--ink);
+}
+
+.theme-toggle__sun  { display: none; }
+.theme-toggle__moon { display: block; }
+
+[data-theme="dark"] .theme-toggle__sun  { display: block; }
+[data-theme="dark"] .theme-toggle__moon { display: none; }
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --cream:      #1C1814;
+  --warm-white: #221E1A;
+  --ink:        #EDE8E1;
+  --ink-mid:    #A8A09A;
+  --ink-light:  #6E6660;
+  --sand:       #2C2620;
+  --sand-deep:  #3A332C;
+  --dark:       #100E0C;
+}
+
+[data-theme="dark"] .nav {
+  background: rgba(28, 24, 20, 0.92);
+  border-bottom-color: var(--sand-deep);
+}
+
+[data-theme="dark"] .weather-widget {
+  background: rgba(28, 24, 20, 0.88);
+  border-color: var(--sand-deep);
+  border-top-color: var(--gold);
+}
+
+[data-theme="dark"] .weather-widget__temp   { color: var(--ink); }
+[data-theme="dark"] .weather-widget__loc    { color: var(--ink-mid); }
+[data-theme="dark"] .weather-widget__status { color: var(--ink-light); }
+[data-theme="dark"] .weather-widget__desc   { color: var(--gold-dark); }

@@ -1,5 +1,19 @@
+// Theme toggle
+(function () {
+  var btn  = document.getElementById('themeToggle');
+  var html = document.documentElement;
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+  });
+}());
+
+// Weather widget
 (function () {
   var statusEl = document.getElementById('wStatus');
+  if (!statusEl) return;
   var bodyEl   = document.getElementById('wBody');
   var emojiEl  = document.getElementById('wEmoji');
   var tempEl   = document.getElementById('wTemp');
