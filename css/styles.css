@@ -259,24 +259,18 @@ h1, h2, h3 {
 }
 
 .about__img-placeholder {
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   border-radius: 2px;
-  background: linear-gradient(145deg, var(--sand) 0%, var(--sand-deep) 55%, #C2A882 100%);
   position: relative;
   overflow: hidden;
 }
 
-.about__img-placeholder::after {
-  content: 'Glo';
-  position: absolute;
-  bottom: 2rem;
-  right: 2rem;
-  font-family: var(--font-serif);
-  font-size: 6rem;
-  font-weight: 300;
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.35);
-  line-height: 1;
+.about__profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 
 .about__heading {
@@ -352,7 +346,7 @@ h1, h2, h3 {
 }
 
 .work-card__img {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 10;
   border-radius: 2px;
   overflow: hidden;
   position: relative;
@@ -376,9 +370,9 @@ h1, h2, h3 {
   background: rgba(28, 25, 21, 0.18);
 }
 
-.work-card__img--1 { background: linear-gradient(145deg, #D4C5B2 0%, #BFA882 100%); }
-.work-card__img--2 { background: linear-gradient(145deg, #C5CCB2 0%, #8C9A7A 100%); }
-.work-card__img--3 { background: linear-gradient(145deg, #C2B8D4 0%, #8A7AA0 100%); }
+.work-card__img--1 { background: url('../assets/bloom-img-1.jpg') center/cover no-repeat; }
+.work-card__img--2 { background: url('../assets/nova-img-1.png') center/cover no-repeat; }
+.work-card__img--3 { background: url('../assets/Lorraine-img-1.jpg') center/cover no-repeat; }
 
 .work-card__info {
   padding: 1.25rem 0 0.5rem;
@@ -601,9 +595,9 @@ h1, h2, h3 {
   background: rgba(28, 25, 21, 0.15);
 }
 
-.project-card__img--1 { background: linear-gradient(135deg, #D4C5B2, #BFA882); }
-.project-card__img--2 { background: linear-gradient(135deg, #C5CCB2, #8C9A7A); }
-.project-card__img--3 { background: linear-gradient(135deg, #C2B8D4, #8A7AA0); }
+.project-card__img--1 { background: url('../assets/bloom-img-1.jpg') center/cover no-repeat; }
+.project-card__img--2 { background: url('../assets/nova-img-1.png') center/cover no-repeat; }
+.project-card__img--3 { background: url('../assets/Lorraine-img-1.jpg') center/cover no-repeat; }
 .project-card__img--4 { background: linear-gradient(135deg, #B8D0D4, #6A8FA0); }
 .project-card__img--5 { background: linear-gradient(135deg, #D4B8B8, #A07070); }
 .project-card__img--6 { background: linear-gradient(135deg, #D4D0B8, #A09A6A); }
