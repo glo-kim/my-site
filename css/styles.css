@@ -598,9 +598,9 @@ h1, h2, h3 {
 .project-card__img--1 { background: url('../assets/bloom-img-1.jpg') center/cover no-repeat; }
 .project-card__img--2 { background: url('../assets/nova-img-1.png') center/cover no-repeat; }
 .project-card__img--3 { background: url('../assets/Lorraine-img-1.jpg') center/cover no-repeat; }
-.project-card__img--4 { background: linear-gradient(135deg, #B8D0D4, #6A8FA0); }
-.project-card__img--5 { background: linear-gradient(135deg, #D4B8B8, #A07070); }
-.project-card__img--6 { background: linear-gradient(135deg, #D4D0B8, #A09A6A); }
+.project-card__img--4 { background: url('../assets/marea.png') center/cover no-repeat; }
+.project-card__img--5 { background: url('../assets/ember-img-1.jpg') center/cover no-repeat; }
+.project-card__img--6 { background: url('../assets/ciel-img.png') center/cover no-repeat; }
 
 .project-card__meta {
   padding: 1.25rem 0 0.5rem;
