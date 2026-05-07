@@ -516,6 +516,13 @@ h1, h2, h3 {
   gap: 1.5rem;
 }
 
+.footer__links a,
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .footer__links a {
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -860,6 +867,7 @@ h1, h2, h3 {
   --sand:       #2C2620;
   --sand-deep:  #3A332C;
   --dark:       #100E0C;
+  --gold-dark:  #A89070;
 }
 
 [data-theme="dark"] .nav {
