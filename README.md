@@ -10,3 +10,7 @@ This is my first dummy personal site using Github copilot.
 - Email: (gloria.kim@slalom.com)
 - LinkedIn: (https://www.linkedin.com/in/gloskim/)
 - Portfolio: (https://my-glo-site.vercel.app/)
+
+## License
+- Source code: MIT License (see LICENSE)
+- Artwork / models: © 2026 Gloria Kim. Not permitted for commercial use without permission unless otherwise stated.
