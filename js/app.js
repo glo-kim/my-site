@@ -82,3 +82,62 @@
     }
   );
 }());
+
+// Custom cursor
+(function () {
+  // Only run on devices with a fine pointer (mouse/trackpad)
+  if (!window.matchMedia('(pointer: fine)').matches) return;
+
+  var dot  = document.getElementById('cursorDot');
+  var ring = document.getElementById('cursorRing');
+  if (!dot || !ring) return;
+
+  var mouseX = window.innerWidth / 2;
+  var mouseY = window.innerHeight / 2;
+  var ringX  = mouseX;
+  var ringY  = mouseY;
+
+  // Snap dot; lerp ring
+  document.addEventListener('mousemove', function (e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    dot.style.left = mouseX + 'px';
+    dot.style.top  = mouseY + 'px';
+  });
+
+  // Show / hide when entering or leaving the viewport
+  document.addEventListener('mouseenter', function () {
+    dot.classList.remove('cursor--hidden');
+    ring.classList.remove('cursor--hidden');
+  });
+  document.addEventListener('mouseleave', function () {
+    dot.classList.add('cursor--hidden');
+    ring.classList.add('cursor--hidden');
+  });
+
+  // Hover state for interactive elements
+  var hoverTargets = 'a, button, [role="button"], input, textarea, select, label, .btn';
+  document.addEventListener('mouseover', function (e) {
+    if (e.target.closest(hoverTargets)) {
+      dot.classList.add('cursor--hover');
+      ring.classList.add('cursor--hover');
+    }
+  });
+  document.addEventListener('mouseout', function (e) {
+    if (e.target.closest(hoverTargets)) {
+      dot.classList.remove('cursor--hover');
+      ring.classList.remove('cursor--hover');
+    }
+  });
+
+  // Smooth ring follow via lerp + rAF
+  var LERP = 0.12;
+  function animate() {
+    ringX += (mouseX - ringX) * LERP;
+    ringY += (mouseY - ringY) * LERP;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animate);
+  }
+  animate();
+}());

@@ -885,3 +885,61 @@ h1, h2, h3 {
 [data-theme="dark"] .weather-widget__loc    { color: var(--ink-mid); }
 [data-theme="dark"] .weather-widget__status { color: var(--ink-light); }
 [data-theme="dark"] .weather-widget__desc   { color: var(--gold-dark); }
+
+/* ============================================
+   CUSTOM CURSOR
+   ============================================ */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+
+  .cursor__dot,
+  .cursor__ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    will-change: transform;
+  }
+
+  /* Small filled dot — snaps to exact pointer position */
+  .cursor__dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transition: width 0.2s ease, height 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* Larger outlined ring — lags behind via JS lerp */
+  .cursor__ring {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--gold);
+    opacity: 0.55;
+    transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease,
+                border-color 0.25s ease, border-width 0.25s ease;
+  }
+
+  /* Hover state — ring expands, dot shrinks slightly */
+  .cursor__dot.cursor--hover {
+    width: 4px;
+    height: 4px;
+    background: var(--gold-dark);
+  }
+
+  .cursor__ring.cursor--hover {
+    width: 46px;
+    height: 46px;
+    opacity: 0.85;
+    border-color: var(--gold-dark);
+    border-width: 1px;
+  }
+
+  /* Hide when cursor leaves the window */
+  .cursor__dot.cursor--hidden,
+  .cursor__ring.cursor--hidden {
+    opacity: 0;
+  }
+}
